@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Pricing Component</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="js/app.js"></script>
+
+</head>
+<body>
+  <main class="pricing-component">
+    <h2 class="h2">Our Pricing</h2>
+
+    <label class="switch" tabindex="0">
+      <input type="checkbox" class="switch__checkbox" tabindex="-1">
+      <span class="switch__slider"></span>
+    </label>
+
+    <ul class="price year">
+      <li class="price__li">
+        <h3 class="price__title">Basic</h3>
+        <p class="price__num">$ <span>19<span class="number">9</span>.99</span></p>
+        <ul class="price__char">
+          <li class="price__char-elem">500 GB Storage</li>
+          <li class="price__char-elem">2 Users Allowed</li>
+          <li class="price__char-elem">Send up to 3 GB</li>
+        </ul>
+        <button class="price__button">Learn more</button>
+      </li>
+      <li class="price__li price__li--accent">
+        <h3 class="price__title">Professional</h3>
+        <p class="price__num">$ <span>24<span class="number">9</span>.99</span></p>
+        <ul class="price__char">
+          <li class="price__char-elem">1 TB Storage</li>
+          <li class="price__char-elem">5 Users Allowed</li>
+          <li class="price__char-elem">Send up to 10 GB</li>
+        </ul>
+        <button class="price__button">Learn more</button>
+      </li>
+      <li class="price__li">
+        <h3 class="price__title">Master</h3>
+        <p class="price__num">$ <span>39<span class="number">9</span>.99</span></p>
+        <ul class="price__char">
+          <li class="price__char-elem">2 TB Storage</li>
+          <li class="price__char-elem">10 Users Allowed</li>
+          <li class="price__char-elem">Send up to 20 GB</li>
+        </ul>
+        <button class="price__button">Learn more</button>
+      </li>
+    </ul>
+    <div class="attribution">
+      <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://koalba.netlify.app/" target="_blank">Alba García</a>.</p>
+    </div>
+  </main>
+</body>
+</html>

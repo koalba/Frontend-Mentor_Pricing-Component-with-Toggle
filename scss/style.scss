@@ -1,0 +1,316 @@
+@import "_variables", "_font", "_reset", "_mixin";
+
+.pricing-component {
+  padding: 4rem 0 0;
+  min-height: 100vh;
+  text-align: center;
+  background: url(../images/bg-top.svg) right top no-repeat,
+    url(../images/bg-bottom.svg) left bottom no-repeat, var(--c-main-lighter);
+  background-blend-mode: multiply;
+}
+
+.h2 {
+  font-size: 1.75rem;
+  color: var(--c-main);
+  padding-bottom: 2rem;
+
+  --slide-in: -1rem;
+
+  animation: 1s ease 0.3s 1 slide-in both;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.6rem;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 2px hsla(237, 63%, 64%, 0);
+  border-radius: 3rem;
+  transition: all 0.5s ease-in-out;
+
+  *:focus {
+    outline: none;
+    box-shadow: 0px 0px 0px 2px hsla(237, 63%, 64%, 1);
+  }
+
+  &__checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__slider {
+    @include position(absolute, top, 0, left, 0);
+    width: 100%;
+    height: 100%;
+    border-radius: 3rem;
+    background: linear-gradient(90deg, var(--g-light) 0%, var(--g-dark) 100%);
+
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:focus &__slider,
+  &__slider:hover {
+    opacity: 0.6;
+  }
+
+  &__slider::after {
+    content: "";
+    width: 40%;
+    height: 75%;
+    background-color: var((--c-main-lighter));
+    border-radius: 50%;
+    @include position(absolute, top, 13.5%, left, 8%);
+
+    transition: all 0.4s ease-in-out;
+  }
+
+  &__checkbox:checked + &__slider::after {
+    left: calc(100% - 48%);
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 25%;
+    font-size: 0.8rem;
+    color: var(--c-main-light);
+  }
+
+  &::before {
+    content: "Annually";
+    left: -5.3rem;
+  }
+
+  &::after {
+    content: "Monthly";
+    right: -5.1rem;
+  }
+
+  --slide-in: -1rem;
+
+  animation: 1s ease 0.5s 1 slide-in both;
+}
+
+.price {
+  width: 90%;
+  margin: 3rem auto 4rem;
+  max-width: 940px;
+
+  @include d-flex(row, nowrap, space-between, center);
+
+  &__li {
+    width: 100%;
+    background-color: white;
+    padding: 1.5rem;
+    box-shadow: 0px 0px 30px 5px hsla(236, 72%, 79%, 0.25);
+    overflow: hidden;
+
+    &:first-child {
+      border-radius: 0.5rem 0 0 0.5rem;
+    }
+
+    &:last-child {
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+
+    &--accent {
+      padding: 3rem 1.5rem;
+      border-radius: 0.5rem;
+      z-index: 1;
+      background: linear-gradient(
+        160deg,
+        var(--g-light) 0%,
+        var(--g-dark) 100%
+      );
+      color: var(--c-main-lighter);
+
+      .price__num {
+        color: var(--c-main-lighter);
+      }
+    }
+  }
+
+  @for $i from 1 to 4 {
+    &__li:nth-of-type(#{$i}) {
+      @if $i < 4 {
+        animation: 1s ease #{"0." + ($i) + "s"} 1 slide-in both;
+      }
+    }
+  }
+
+  &__num {
+    font-size: 2rem;
+    margin-top: 1.25rem;
+    padding: 0 1rem;
+    color: var(--c-main-dark);
+    line-height: 1;
+
+    & > span {
+      font-size: 1.7em;
+      vertical-align: middle;
+      display: inline-block;
+      position: relative;
+    }
+  }
+
+  &__char {
+    margin: 1.5rem 0;
+    &-elem {
+      font-size: 0.8rem;
+      padding: 0.9rem 0;
+      &:first-child,
+      &:last-child {
+        border-top: 1.25px solid hsla(234, 14%, 74%, 0.4);
+        border-bottom: 1.25px solid hsla(234, 14%, 74%, 0.4);
+      }
+    }
+  }
+
+  &__li--accent &__char-elem {
+    border-color: var(--c-main-light);
+  }
+
+  &__button {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    width: 100%;
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 1em 0;
+    border-radius: 0.25rem;
+    color: var(--c-button, var(--c-main-lighter));
+    box-shadow: inset 0px 0px 0px 0px var(--b-button, var(--c-main-light));
+    cursor: pointer;
+
+    transition: all 0.4s ease-in-out;
+  }
+
+  &__button::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    @include position(absolute, top, 0, left, 0);
+    background: var(
+      --bkg-button,
+      linear-gradient(90deg, var(--g-light) 0%, var(--g-dark) 100%)
+    );
+    z-index: -1;
+
+    transform-origin: bottom;
+    transform: scaleY(1);
+    transition: transform 0.4s ease-in-out;
+  }
+
+  &__li--accent {
+    --c-button: var(--g-dark);
+    --b-button: var(--c-main-lighter);
+    --bkg-button: var(--c-main-lighter);
+  }
+
+  &__button:hover,
+  &__button:focus {
+    outline: none;
+    box-shadow: inset 0px 0px 0px 1.5px var(--b-button, var(--c-main-light));
+    color: var(--bkg-button);
+  }
+
+  &__button:hover::before,
+  &__button:focus::before {
+    outline: none;
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+}
+
+.number {
+  display: inline-block;
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  vertical-align: bottom;
+
+  transition: all 0.4s ease-in-out;
+}
+
+.year .number {
+  width: 0.6em;
+  opacity: 1;
+}
+
+@media screen and (max-width: 1000px) {
+  .price {
+    &__num {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .pricing-component {
+    background: url(../images/bg-top.svg) right top no-repeat,
+      var(--c-main-lighter);
+    background-position-x: 10rem;
+    background-position-y: -2.5rem;
+  }
+
+  .price {
+    max-width: 300px;
+    flex-direction: column;
+
+    &__li {
+      &:first-child,
+      &:last-child {
+        border-radius: 0.5em;
+      }
+
+      &--accent {
+        margin: 2rem 0;
+      }
+    }
+
+    &__num {
+      font-size: 2rem;
+    }
+  }
+}
+
+/* -------------- ATRIBUTION -------------- */
+
+.attribution {
+  font-size: 11px;
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 2rem;
+
+  --slide-in: 1rem;
+
+  animation: 1s ease 0.3s 1 slide-in both;
+
+  a {
+    color: var(--g-dark);
+    transition: all 0.3s ease-in-out;
+  }
+
+  a:hover,
+  a:focus {
+    outline: none;
+    color: var(--g-light);
+    text-decoration: underline;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(var(--slide-in, 2rem));
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
