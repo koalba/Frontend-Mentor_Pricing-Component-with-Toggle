@@ -27,9 +27,8 @@ Users should be able to:
 
 ### Screenshot
 
-|                   Desktop Anual                   |                   Desktop Monthly                    |                       Mobile                       |
-| :-----------------------------------------------: | :--------------------------------------------------: | :------------------------------------------------: |
-| ![Desktop anual prices](design/Final_desktop.png) | ![Desktop monthly prices](design/Final_desktop2.png) | ![Desktop monthly prices](design/Final_mobile.png) |
+![Desktop anual prices](design/Final_desktop.png)
+![Desktop monthly prices](design/Final_desktop2.png)
 
 ### Links
 
@@ -51,9 +50,9 @@ Users should be able to:
 
 While doing this challenge, I tried to give a bit more atention to the animations in it. I think the most challengin one was how to show the change between the different prices, I strugle deciding what I would do and tried a lot of different things. In the end this idea came to my mind and I'm really proud of how it turned out! I don't know if there is a better way to do it than this, but I think it works pretty nicely!
 
-![Animation HTML](design/animation_html.png)
-![Animation CSS](design/animation_css.png)
-![Animation JQUERY](design/animation_jquery.png)
+<img src="design/animation_html.png" width="500" alt="Animation HTML">
+<img src="design/animation_css.png" width="500" alt="Animation CSS">
+<img src="design/animation_jquery.png" width="500" alt="Animation JQUERY">
 
 ### Continued development
 
