@@ -27,9 +27,11 @@ Users should be able to:
 
 ### Screenshot
 
-|                   Desktop Anual                   |                   Desktop Monthly                    |                       Mobile                       |
-| :-----------------------------------------------: | :--------------------------------------------------: | :------------------------------------------------: |
-| ![Desktop anual prices](design/Final_desktop.png) | ![Desktop monthly prices](design/Final_desktop2.png) | ![Desktop monthly prices](design/Final_mobile.png) |
+|                   Desktop Anual                   |                   Desktop Monthly                    |
+| :-----------------------------------------------: | :--------------------------------------------------: | 
+| ![Desktop anual prices](design/Final_desktop.png) | ![Desktop monthly prices](design/Final_desktop2.png) | 
+
+![Desktop monthly prices](design/Final_mobile.png)
 
 ### Links
 
