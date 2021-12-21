@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/pricing-component-with-toggle-using-html-scss-and-jq-_78UzfSgD)
-- Live Site URL: [Add live site URL here](https://pricing-component-albagr.netlify.app/)
+- Solution URL: [Pricing component with toggle](https://www.frontendmentor.io/solutions/pricing-component-with-toggle-using-html-scss-and-jq-_78UzfSgD)
+- Live Site URL: [Pricing component with toggle](https://pricing-component-albagr.netlify.app/)
 
 ## My process
 
